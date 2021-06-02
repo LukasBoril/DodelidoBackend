@@ -1,7 +1,13 @@
 package ch.zhaw.dodelidobackend;
 
-import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
+/**
+ * Player Class for Player instance
+ * Default with getters and setters
+ *
+ * @author Kaltrim Bajrami
+ * @version 2021.06.02
+ */
+
 
 public class Player {
 
