@@ -1,5 +1,7 @@
 package ch.zhaw.dodelidobackend;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Timer Class for the DoDeLiDo backend
  * Field variable "countDownTimeInSec" contains the starting value of the count down timer in seconds
@@ -8,6 +10,8 @@ package ch.zhaw.dodelidobackend;
  * @author Lukas Boril
  * @version 2021.05.29
  */
+
+@Component
 public class TimerCountDown {
 
     private int countDownTimeInSec;
@@ -18,8 +22,8 @@ public class TimerCountDown {
      * Initializes countDownTimeInSec with an int parameter
      * Initializes timerDone with 'false'
      */
-    public TimerCountDown(int timerDurationInSec) {
-        this.countDownTimeInSec = timerDurationInSec;
+    public TimerCountDown() {
+        this.countDownTimeInSec = 10;
         this.timerDone = false;
     }
 

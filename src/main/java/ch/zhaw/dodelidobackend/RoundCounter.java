@@ -1,5 +1,7 @@
 package ch.zhaw.dodelidobackend;
 
+import org.springframework.stereotype.Component;
+
 /**
  * RoundCounter Class for the DoDeLiDo backend
  * Field variable "roundsSinceLastFail" contains an int that counts the round since the last wrong answer
@@ -8,6 +10,7 @@ package ch.zhaw.dodelidobackend;
  * @author Lukas Boril
  * @version 2021.05.30
  */
+@Component
 public class RoundCounter {
 
     private int roundsSinceLastFail;
