@@ -17,7 +17,8 @@ import java.util.TimerTask;
 @Service
 public class TimerCountDownService {
 
-    private TimerCountDown timerCountDown = new TimerCountDown(10);
+    @Autowired
+    private TimerCountDown timerCountDown;
 
     /**
      * Method to reset the starting value (in seconds) of the count down timer

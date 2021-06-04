@@ -1,5 +1,6 @@
 package ch.zhaw.dodelidobackend;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +15,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class RoundCounterService {
 
-    RoundCounter roundCounter = new RoundCounter();
+    @Autowired
+    RoundCounter roundCounter;
+
 
     /**
      * Method to set the roundCounter back to zero
