@@ -1,5 +1,7 @@
 package ch.zhaw.dodelidobackend;
 
+import java.util.Locale;
+
 public class Card {
     private Animals animal;
     private Colors color;
@@ -8,6 +10,13 @@ public class Card {
         this.animal = animal;
         this.color = color;
     }
+
+    public Card(String animal, String color) {
+        this.animal = Animals.valueOf(animal.toUpperCase());
+       this.color = Colors.valueOf(color.toUpperCase());
+    }
+
+    public Card() {}
 
     public Colors getColor() {
         return color;
