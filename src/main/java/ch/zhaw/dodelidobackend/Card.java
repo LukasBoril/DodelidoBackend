@@ -1,7 +1,10 @@
 package ch.zhaw.dodelidobackend;
 
-import java.util.Locale;
-
+/**
+ * a model class  that allows to manage the animal and color of a Card.
+ *  @author Nadine Duss
+ *  @version 2021.06.05
+ */
 public class Card {
     private Animals animal;
     private Colors color;
@@ -34,6 +37,11 @@ public class Card {
         this.animal = animal;
     }
 
+    /**
+     * method to chgeckl whether the aniaml and the color of two card are identical
+     * @param obj   the card to check for content equality
+     * @return true if the content of the two cards is identical otherwise false
+     */
     @Override
     public boolean equals(Object obj) {
        //Referenzgleichheheit
