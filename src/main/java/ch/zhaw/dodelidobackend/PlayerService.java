@@ -18,8 +18,8 @@ public class PlayerService {
         return playerList;
     }
 
-    public Player getPlayer(String name){
-       return playerList.stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null);
+    public Player getPlayer(String name) {
+        return playerList.stream().filter(t -> t.getName().equals(name)).findFirst().orElse(null);
     }
 
 

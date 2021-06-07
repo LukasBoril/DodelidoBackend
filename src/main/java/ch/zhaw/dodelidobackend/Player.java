@@ -20,7 +20,7 @@ public class Player {
 
     }
 
-    public Player (String name){
+    public Player(String name) {
         super();
         setName(name);
         setId(id++);
@@ -60,7 +60,6 @@ public class Player {
     public void setYourTurn(Boolean yourTurn) {
         this.yourTurn = yourTurn;
     }
-
 
 
 }
