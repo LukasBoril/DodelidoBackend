@@ -12,18 +12,16 @@ package ch.zhaw.dodelidobackend;
 public class Player {
 
     private String name;
-    private static int id = 0;
-    private int healthPoints;
-    private boolean yourTurn;
+    private Integer id ;
+    private static Integer idCounter = 0;
+    private Integer healthPoints;
+    private Boolean yourTurn;
 
-    public Player() {
 
-    }
 
     public Player(String name) {
-        super();
         setName(name);
-        setId(id++);
+        setId(++idCounter);
         setHealthPoints(100);
         setYourTurn(false);
     }
@@ -37,23 +35,23 @@ public class Player {
         this.name = name;
     }
 
-    public static int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public static void setId(int id) {
-        Player.id = id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getHealthPoints() {
+    public Integer getHealthPoints() {
         return healthPoints;
     }
 
-    public void setHealthPoints(int healthPoints) {
+    public void setHealthPoints(Integer healthPoints) {
         this.healthPoints = healthPoints;
     }
 
-    public boolean getYourTurn() {
+    public Boolean getYourTurn() {
         return yourTurn;
     }
 
