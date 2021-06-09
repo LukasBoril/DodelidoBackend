@@ -78,6 +78,7 @@ public class PlayerService {
             nextPlayer.setYourTurn(true);
             lastPlayer.setYourTurn(false);
         } else {
+            lastPlayer.setYourTurn(false);
             initialTurn();
         }
 
