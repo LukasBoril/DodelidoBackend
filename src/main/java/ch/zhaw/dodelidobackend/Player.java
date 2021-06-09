@@ -19,7 +19,12 @@ public class Player {
     private Integer healthPoints;
     private Boolean yourTurn;
 
+    /**
+     *
+     */
+    public Player(){
 
+    }
     /**
      * Constructor to create new Player
      *
