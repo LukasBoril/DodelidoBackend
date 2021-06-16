@@ -1,11 +1,9 @@
-package ch.zhaw.dodelidobackend;
+package ch.zhaw.dodelidobackend.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import ch.zhaw.dodelidobackend.model.Player;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 /**

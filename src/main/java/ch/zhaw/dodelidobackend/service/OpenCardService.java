@@ -1,20 +1,18 @@
-package ch.zhaw.dodelidobackend;
+package ch.zhaw.dodelidobackend.service;
 
 /**
  * Service class of the Dodeldio cardstack. This class has a ArrayList<Card> instance variable called
  * openCards that holds 3 Cards and represent the openly visible cards.
  */
 
-import org.springframework.beans.factory.annotation.Autowired;
+import ch.zhaw.dodelidobackend.model.CardStackService;
+import ch.zhaw.dodelidobackend.model.Card;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class OpenCardService {
 
-    //@Autowired
+    //@Autowired  hätte gerne singleton?
     private CardStackService cardStackService = new CardStackService();
     //private List<Card> openCards = new ArrayList<>();
     private Card[] openCards = new Card[3];

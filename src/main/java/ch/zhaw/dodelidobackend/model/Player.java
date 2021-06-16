@@ -1,4 +1,4 @@
-package ch.zhaw.dodelidobackend;
+package ch.zhaw.dodelidobackend.model;
 
 /**
  * Player Class for Player instance

@@ -1,5 +1,6 @@
-package ch.zhaw.dodelidobackend;
+package ch.zhaw.dodelidobackend.service;
 
+import ch.zhaw.dodelidobackend.model.RoundCounter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

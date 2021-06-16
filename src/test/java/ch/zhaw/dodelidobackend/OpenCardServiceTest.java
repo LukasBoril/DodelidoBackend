@@ -1,5 +1,7 @@
 package ch.zhaw.dodelidobackend;
 
+import ch.zhaw.dodelidobackend.model.Card;
+import ch.zhaw.dodelidobackend.service.OpenCardService;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

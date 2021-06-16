@@ -1,10 +1,11 @@
 package ch.zhaw.dodelidobackend;
 
+import ch.zhaw.dodelidobackend.controller.OpenCardController;
+import ch.zhaw.dodelidobackend.model.Card;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.util.Arrays;
@@ -20,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class OpenCardControllerTest  extends AbstractTest {
 
         @Autowired
-       OpenCardController openCardController;
+        OpenCardController openCardController;
 
         @Override
         @BeforeEach

@@ -1,5 +1,7 @@
-package ch.zhaw.dodelidobackend;
+package ch.zhaw.dodelidobackend.controller;
 
+import ch.zhaw.dodelidobackend.model.Player;
+import ch.zhaw.dodelidobackend.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
