@@ -78,4 +78,14 @@ public class PlayerController {
         playerService.nextTurn();
     }
 
+    /**
+     * Method that punished current player
+     * @author Lukas Boril
+     * @version 2021.06.19
+     */
+    @RequestMapping("/fail")
+    public void punishCurrentPlayer() {
+        playerService.punishCurrentPlayer();
+    }
+
 }
