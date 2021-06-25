@@ -29,6 +29,24 @@ public class PlayerController {
     }
 
     /**
+     * get all player names which are in game
+     * @return List of all player names String
+     */
+    @RequestMapping("/playernames")
+    public List<String> getAllPlayerNames(){
+        return playerService.getPlayerNames();
+    }
+
+    /**
+     * get all player names which are in game
+     * @return List of all player names String
+     */
+    @RequestMapping("/playernames/{playerName}")
+    public String getPlayerName(@PathVariable String playerName){
+        return playerService.getPlayerName(playerName);
+    }
+
+    /**
      * get a specific player
      *
      * @param playerName to find specific player with name String
