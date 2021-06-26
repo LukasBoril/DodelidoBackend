@@ -28,6 +28,18 @@ public class PlayerService {
     }
 
     /**
+     * get all player names which are in game
+     * @return List of all player names in String
+     */
+    public List<String> getPlayerNames() {
+        List players = new ArrayList();
+        for(Player p : playerList){
+            players.add(p.getName());
+        }
+        return players;
+    }
+
+    /**
      * get a specific player
      *
      * @param playerName to find specific player with name String
@@ -35,6 +47,17 @@ public class PlayerService {
      */
     public Player getPlayer(String playerName) {
         return playerList.stream().filter(t -> t.getName().equals(playerName)).findFirst().orElse(null);
+    }
+
+    /**
+     * get a specific player
+     *
+     * @param playerName to find specific player with name String
+     * @return Player getName String value
+     */
+    public String getPlayerName(String playerName) {
+        Player player = playerList.stream().filter(t -> t.getName().equals(playerName)).findFirst().orElse(null);
+        return player.getName();
     }
 
     /**
