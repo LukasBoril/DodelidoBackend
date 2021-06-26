@@ -91,4 +91,20 @@ public class PlayerService {
         Player player = new Player(playerName);
         playerList.add(player);
     }
+
+    /**
+     * method to be called once a player makes a mistake
+     * method gets current player, determined the amount of damage by accessing the roundCounter
+     * Subsequent the roundCounter is set to zero again
+     * and updates the healtPoints of the current player
+     * @author Lukas Boril
+     * @version 2021.06.19
+     */
+    public void punishCurrentPlayer() {
+        Player currentPlayer = whosTurn();
+        int currentHealt = currentPlayer.getHealthPoints();
+        int damage = RoundCounterService.getCurrentRoundCounterValue();
+        currentPlayer.setHealthPoints(currentHealt-damage);
+        RoundCounterService.setRoundCounterToZero();
+    }
 }

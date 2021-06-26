@@ -16,14 +16,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class RoundCounterService {
 
-    @Autowired
-    RoundCounter roundCounter;
+    // @Autowired
+    static RoundCounter roundCounter = new RoundCounter();
 
 
     /**
      * Method to set the roundCounter back to zero
      */
-    public void setRoundCounterToZero() {
+    public static void setRoundCounterToZero() {
         roundCounter.setRoundsSinceLastFail(0);
     }
 
@@ -31,7 +31,7 @@ public class RoundCounterService {
      * Method to get the current value of the roundCounter
      * @return int current value of the roundCounter
      */
-    public int getCurrentRoundCounterValue() {
+    public static int getCurrentRoundCounterValue() {
         return roundCounter.getRoundsSinceLastFail();
     }
 
