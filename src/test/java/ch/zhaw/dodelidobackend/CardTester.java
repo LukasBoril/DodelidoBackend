@@ -1,5 +1,6 @@
 package ch.zhaw.dodelidobackend;
 
+import ch.zhaw.dodelidobackend.model.Card;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

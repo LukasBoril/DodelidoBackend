@@ -1,4 +1,4 @@
-package ch.zhaw.dodelidobackend;
+package ch.zhaw.dodelidobackend.model;
 /**
  * Service class of the Dodeldio cardstack. This class has a ArrayList<Card> instance variable for all
  * possible cards (25 in total, 5 different animals in 5 colours) called cardDeck.
@@ -6,12 +6,13 @@ package ch.zhaw.dodelidobackend;
  *  @version 2021.06.05
  */
 
-import org.springframework.stereotype.Service;
+import ch.zhaw.dodelidobackend.model.Card;
 
 import java.util.ArrayList;
 import java.util.List;
 
 //@Service
+//@Singleton
 public class CardStackService {
 
 

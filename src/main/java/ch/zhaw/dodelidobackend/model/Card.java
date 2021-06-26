@@ -1,4 +1,4 @@
-package ch.zhaw.dodelidobackend;
+package ch.zhaw.dodelidobackend.model;
 
 /**
  * a model class  that allows to manage the animal and color of a Card.
@@ -19,6 +19,7 @@ public class Card {
        this.color = Colors.valueOf(color.toUpperCase());
     }
 
+    // needed for RestControllerTest
     public Card() {}
 
     public Colors getColor() {
