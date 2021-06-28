@@ -28,7 +28,7 @@ public class RoundCounterController {
      */
     @RequestMapping( method = RequestMethod.POST, value = "/roundCounter")
     public void setRoundCounterToZero() {
-        roundCounterService.setRoundCounterToZero();
+        roundCounterService.setRoundCounterToOne();
     }
 
     /**

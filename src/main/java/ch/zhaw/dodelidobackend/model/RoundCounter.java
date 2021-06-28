@@ -16,10 +16,10 @@ public class RoundCounter {
     private int roundsSinceLastFail;
 
     /**
-     * Constructor for the RoundCounter. Initializes roundsSinceLastFail with 0
+     * Constructor for the RoundCounter. Initializes roundsSinceLastFail with 1
      */
     public RoundCounter() {
-        this.roundsSinceLastFail = 0;
+        this.roundsSinceLastFail = 1;
     }
 
     /**

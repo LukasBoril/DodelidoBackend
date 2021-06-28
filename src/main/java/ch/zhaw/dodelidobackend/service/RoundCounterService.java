@@ -21,10 +21,10 @@ public class RoundCounterService {
 
 
     /**
-     * Method to set the roundCounter back to zero
+     * Method to set the roundCounter back to onw
      */
-    public static void setRoundCounterToZero() {
-        roundCounter.setRoundsSinceLastFail(0);
+    public static void setRoundCounterToOne() {
+        roundCounter.setRoundsSinceLastFail(1);
     }
 
     /**

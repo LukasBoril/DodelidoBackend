@@ -35,8 +35,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RoundCounterTest {
 
     protected MockMvc mvc;
-    @Autowired
-    private RoundCounterController roundCounterController;
+
+    private RoundCounterController roundCounterController = new RoundCounterController();
     @Autowired
     WebApplicationContext webApplicationContext;
 
@@ -48,12 +48,12 @@ public class RoundCounterTest {
     @Test
     public void testDefaultTimerTime() throws Exception {
 
-        // checks if initialized with value 0
+        // checks if initialized with value 1
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/roundCounter")
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
         String response = mvcResult.getResponse().getContentAsString();
         int int_resp = mapFromJson(response, Integer.class);
-        assertEquals(0, int_resp);
+        assertEquals(1, int_resp);
 
         // checks if it can be increased
          mvcResult = mvc.perform(MockMvcRequestBuilders.put("/roundCounter")
@@ -62,16 +62,16 @@ public class RoundCounterTest {
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
          response = mvcResult.getResponse().getContentAsString();
          int_resp = mapFromJson(response, Integer.class);
-        assertEquals(1, int_resp);
+        assertEquals(2, int_resp);
 
-        // checks if can be set back to 0
+        // checks if can be set back to 1
         mvcResult = mvc.perform(MockMvcRequestBuilders.post("/roundCounter")
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
         mvcResult = mvc.perform(MockMvcRequestBuilders.get("/roundCounter")
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
         response = mvcResult.getResponse().getContentAsString();
         int_resp = mapFromJson(response, Integer.class);
-        assertEquals(0, int_resp);
+        assertEquals(1, int_resp);
 
     }
 

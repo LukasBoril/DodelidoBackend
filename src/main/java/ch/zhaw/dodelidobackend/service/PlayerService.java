@@ -128,6 +128,6 @@ public class PlayerService {
         int currentHealt = currentPlayer.getHealthPoints();
         int damage = RoundCounterService.getCurrentRoundCounterValue();
         currentPlayer.setHealthPoints(currentHealt-damage);
-        RoundCounterService.setRoundCounterToZero();
+        RoundCounterService.setRoundCounterToOne();
     }
 }
