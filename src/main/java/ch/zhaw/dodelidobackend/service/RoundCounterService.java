@@ -43,4 +43,12 @@ public class RoundCounterService {
         current++;
         roundCounter.setRoundsSinceLastFail(current);
     }
+
+    /**
+     * Method to reset Roundcounter to 1. Method needed for clear or reset command
+     * @author: Kaltrim Bajrami
+     */
+    public void resetCounter(){
+        roundCounter.setRoundsSinceLastFail(1);
+    }
 }
