@@ -132,7 +132,7 @@ public class PlayerService {
         RoundCounterService.setRoundCounterToZero();
     }
 
-    public void clearPlayer() {
+    public void clearPlayers() {
         playerList.clear();
     }
 }
