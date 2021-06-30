@@ -111,7 +111,7 @@ public class PlayerController {
     /**
      * Method to clear all entries in Playerlist and reset Roundcounter
      * @author Kaltrim Bajrami
-     * @version 2021.06.19
+     * @version 2021.06.30
      */
     @RequestMapping("/clear")
     public void clear(){
