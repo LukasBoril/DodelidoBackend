@@ -17,6 +17,7 @@ public class PlayerService {
 
 
     private List<Player> playerList = new ArrayList<>();
+    private RoundCounterService roundCounterService;
 
     /**
      * get all players which are in game
@@ -129,5 +130,9 @@ public class PlayerService {
         int damage = RoundCounterService.getCurrentRoundCounterValue();
         currentPlayer.setHealthPoints(currentHealt-damage);
         RoundCounterService.setRoundCounterToZero();
+    }
+
+    public void clearPlayer() {
+        playerList.clear();
     }
 }
