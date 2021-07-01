@@ -116,7 +116,7 @@ public class PlayerController {
     @RequestMapping("/clear")
     public void clear(){
         playerService.clearPlayers();
-        roundCounterService.resetCounter();
+        roundCounterService.setRoundCounterToOne();
     }
 
 }
