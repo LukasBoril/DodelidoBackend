@@ -117,6 +117,7 @@ public class PlayerController {
     public void clear(){
         playerService.clearPlayers();
         roundCounterService.setRoundCounterToOne();
+        playerService.resetId();
     }
 
 }

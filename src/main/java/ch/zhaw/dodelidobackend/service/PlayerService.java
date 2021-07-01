@@ -135,4 +135,11 @@ public class PlayerService {
     public void clearPlayers() {
         playerList.clear();
     }
+
+    /**
+     *
+     */
+    public void resetId(){
+        Player.resetIdCounter();
+    }
 }
