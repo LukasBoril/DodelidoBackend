@@ -108,16 +108,41 @@ public class PlayerControllerTest extends AbstractTest {
         assertEquals(player.getYourTurn(), player1.getYourTurn());
     }
 
-    private MvcResult askForPostResult(String uri) throws Exception {
-        MvcResult output = mvc.perform(MockMvcRequestBuilders.post(uri)
-                .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
-        return output;
+    @Test
+    public void t4StartGame() throws Exception {
+        String uri = "/players/name";
+        Player player1 = new Player("name");
+        player1.setYourTurn(true);
+        startRequest("/start");
+        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
+                .accept(MediaType.APPLICATION_JSON_VALUE, "application/hal+json")).andReturn();
+
+        int status = mvcResult.getResponse().getStatus();
+        assertEquals(200, status);
+        String response = mvcResult.getResponse().getContentAsString();
+        Player player = super.mapFromJson(response, Player.class);
+        assertEquals(player.getYourTurn(), player1.getYourTurn());
+
     }
 
     private MvcResult askForGetResult(String uri) throws Exception {
         MvcResult output = mvc.perform(MockMvcRequestBuilders.get(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
         return output;
+    }
+
+    private MvcResult askForPostResult(String uri) throws Exception {
+        MvcResult output = mvc.perform(MockMvcRequestBuilders.post(uri)
+                .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
+        return output;
+    }
+
+    private void startRequest(String uri) throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get(uri).accept(MediaType.APPLICATION_JSON_VALUE));
+    }
+
+    private void createTestPlayer(String uri) throws Exception {
+        mvc.perform(MockMvcRequestBuilders.post(uri).accept(MediaType.APPLICATION_JSON_VALUE));
     }
 
 
