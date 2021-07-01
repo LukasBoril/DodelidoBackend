@@ -1,15 +1,19 @@
 package ch.zhaw.dodelidobackend;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import ch.zhaw.dodelidobackend.controller.PlayerController;
 import ch.zhaw.dodelidobackend.model.Player;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.FixMethodOrder;
+import org.junit.jupiter.api.*;
+import org.junit.runner.manipulation.Alphanumeric;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.StatusAssertions;
 import org.springframework.test.web.servlet.MockMvc;
@@ -20,12 +24,14 @@ import org.springframework.web.context.WebApplicationContext;
 
 /**
  * Test class for PlayerController
+ *
  * @author Kaltrim Bajrami
  * @version 01.07.2021
  */
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@TestMethodOrder(MethodOrderer.Alphanumeric.class)
 public class PlayerControllerTest extends AbstractTest {
 
     @Autowired
@@ -44,10 +50,11 @@ public class PlayerControllerTest extends AbstractTest {
 
     /**
      * Testclass to test a simple post and get request, creation of player "name"
+     *
      * @throws Exception
      */
     @Test
-    public void testPostandGet() throws Exception {
+    public void t1testPostAndGet() throws Exception {
         String uri_check = "/playernames";
         String uri_name = "/players/name";
 
@@ -67,24 +74,14 @@ public class PlayerControllerTest extends AbstractTest {
 
     }
 
-    private MvcResult askForPostResult(String uri) throws Exception {
-        MvcResult output = mvc.perform(MockMvcRequestBuilders.post(uri)
-                .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
-        return output;
-    }
-
-    private MvcResult askForGetResult(String uri) throws Exception {
-        MvcResult output = mvc.perform(MockMvcRequestBuilders.get(uri)
-                .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
-        return output;
-    }
 
     /**
      * Test to get the player "Name" created in the post and get request test
+     *
      * @throws Exception
      */
     @Test
-    public void getNamePlayer() throws Exception {
+    public void t2getNamePlayer() throws Exception {
         String uri = "/players/name";
         Player player1 = new Player("name");
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
@@ -95,6 +92,32 @@ public class PlayerControllerTest extends AbstractTest {
         String response = mvcResult.getResponse().getContentAsString();
         Player player = super.mapFromJson(response, Player.class);
         assertEquals(player.getName(), player1.getName());
+    }
+
+    @Test
+    public void t3getNamePlayerInitTurnValue() throws Exception {
+        String uri = "/players/name";
+        Player player1 = new Player("name");
+        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
+                .accept(MediaType.APPLICATION_JSON_VALUE, "application/hal+json")).andReturn();
+
+        int status = mvcResult.getResponse().getStatus();
+        assertEquals(200, status);
+        String response = mvcResult.getResponse().getContentAsString();
+        Player player = super.mapFromJson(response, Player.class);
+        assertEquals(player.getYourTurn(), player1.getYourTurn());
+    }
+
+    private MvcResult askForPostResult(String uri) throws Exception {
+        MvcResult output = mvc.perform(MockMvcRequestBuilders.post(uri)
+                .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
+        return output;
+    }
+
+    private MvcResult askForGetResult(String uri) throws Exception {
+        MvcResult output = mvc.perform(MockMvcRequestBuilders.get(uri)
+                .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
+        return output;
     }
 
 
