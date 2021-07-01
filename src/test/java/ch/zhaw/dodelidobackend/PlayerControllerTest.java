@@ -79,6 +79,7 @@ public class PlayerControllerTest extends AbstractTest {
      * Test to get the player "Name" created in the post and get request test
      *
      * @throws Exception
+     * @result the test is successful if the player with the name "name" was created
      */
     @Test
     public void t2getNamePlayer() throws Exception {
@@ -94,6 +95,11 @@ public class PlayerControllerTest extends AbstractTest {
         assertEquals(player.getName(), player1.getName());
     }
 
+    /**
+     * tests initial yourTurn value after creating the player
+     * @throws Exception
+     * @result successful test means that player value yourTurn is false
+     */
     @Test
     public void t3getNamePlayerInitTurnValue() throws Exception {
         String uri = "/players/name";
@@ -108,6 +114,11 @@ public class PlayerControllerTest extends AbstractTest {
         assertEquals(player.getYourTurn(), player1.getYourTurn());
     }
 
+    /**
+     * Test for the start of the game
+     * @throws Exception
+     * @result test is successful if after the start the created player "name" has the yourTurn value true
+     */
     @Test
     public void t4StartGame() throws Exception {
         String uri = "/players/name";
@@ -150,7 +161,7 @@ public class PlayerControllerTest extends AbstractTest {
     }
 
     /**
-     * create a get request with return of the result, simulates initial game start
+     * create a get request with return of the result, triggers game start
      * @param uri
      * @return MvcResult (Json)
      * @throws Exception
