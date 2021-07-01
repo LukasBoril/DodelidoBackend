@@ -141,9 +141,5 @@ public class PlayerControllerTest extends AbstractTest {
         mvc.perform(MockMvcRequestBuilders.get(uri).accept(MediaType.APPLICATION_JSON_VALUE));
     }
 
-    private void createTestPlayer(String uri) throws Exception {
-        mvc.perform(MockMvcRequestBuilders.post(uri).accept(MediaType.APPLICATION_JSON_VALUE));
-    }
-
 
 }
