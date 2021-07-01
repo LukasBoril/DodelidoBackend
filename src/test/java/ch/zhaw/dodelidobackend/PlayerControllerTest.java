@@ -125,18 +125,36 @@ public class PlayerControllerTest extends AbstractTest {
 
     }
 
+    /**
+     * create a get request with return of the result
+     * @param uri
+     * @return MvcResult (Json)
+     * @throws Exception
+     */
     private MvcResult askForGetResult(String uri) throws Exception {
         MvcResult output = mvc.perform(MockMvcRequestBuilders.get(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
         return output;
     }
 
+    /**
+     * create a post request with return of the result
+     * @param uri
+     * @return MvcResult (Json)
+     * @throws Exception
+     */
     private MvcResult askForPostResult(String uri) throws Exception {
         MvcResult output = mvc.perform(MockMvcRequestBuilders.post(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
         return output;
     }
 
+    /**
+     * create a get request with return of the result, simulates initial game start
+     * @param uri
+     * @return MvcResult (Json)
+     * @throws Exception
+     */
     private void startRequest(String uri) throws Exception {
         mvc.perform(MockMvcRequestBuilders.get(uri).accept(MediaType.APPLICATION_JSON_VALUE));
     }
