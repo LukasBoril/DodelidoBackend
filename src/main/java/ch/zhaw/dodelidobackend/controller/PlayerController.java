@@ -2,6 +2,7 @@ package ch.zhaw.dodelidobackend.controller;
 
 import ch.zhaw.dodelidobackend.model.Player;
 import ch.zhaw.dodelidobackend.service.PlayerService;
+import ch.zhaw.dodelidobackend.service.RoundCounterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,7 @@ public class PlayerController {
 
     @Autowired
     private PlayerService playerService;
+    private RoundCounterService roundCounterService;
 
     /**
      * get all players which are in game
@@ -104,6 +106,17 @@ public class PlayerController {
     @RequestMapping("/fail")
     public void punishCurrentPlayer() {
         playerService.punishCurrentPlayer();
+    }
+
+    /**
+     * Method to clear all entries in Playerlist and reset Roundcounter
+     * @author Kaltrim Bajrami
+     * @version 2021.06.30
+     */
+    @RequestMapping("/clear")
+    public void clear(){
+        playerService.clearPlayers();
+        roundCounterService.resetCounter();
     }
 
 }
