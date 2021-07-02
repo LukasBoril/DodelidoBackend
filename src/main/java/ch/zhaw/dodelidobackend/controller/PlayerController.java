@@ -100,6 +100,7 @@ public class PlayerController {
 
     /**
      * Method that punished current player
+     * The healtpoints get reduced and the roundCounter is reset
      * @author Lukas Boril
      * @version 2021.06.19
      */
