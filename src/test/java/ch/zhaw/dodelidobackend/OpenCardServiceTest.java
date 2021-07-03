@@ -12,9 +12,9 @@ public class OpenCardServiceTest {
 
     @Test
     public void replaceCard() {
-        Card[] round1 = deck.getOpenCards2();
-        deck.replaceOneOpenCard2();
-        Card[] round2 = deck.getOpenCards2();
+        Card[] round1 = deck.getOpenCards();
+        deck.replaceOneOpenCard();
+        Card[] round2 = deck.getOpenCards();
 
         int sum = 0;
         for (int i = 0; i < 3; i++) {

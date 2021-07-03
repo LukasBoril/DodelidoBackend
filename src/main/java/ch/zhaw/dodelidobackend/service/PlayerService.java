@@ -95,7 +95,8 @@ public class PlayerService {
         Player lastPlayer = whosTurn();
         Player nextPlayer;
         if (playerId++ < playerList.size()) {
-            nextPlayer = getPlayer(playerId++);
+            //nextPlayer = getPlayer(playerId++);
+            nextPlayer = getPlayer(++playerId);
             nextPlayer.setYourTurn(true);
             lastPlayer.setYourTurn(false);
         } else {
@@ -129,5 +130,9 @@ public class PlayerService {
         int damage = RoundCounterService.getCurrentRoundCounterValue();
         currentPlayer.setHealthPoints(currentHealt-damage);
         RoundCounterService.setRoundCounterToOne();
+    }
+
+    public void clearPlayers() {
+        playerList.clear();
     }
 }

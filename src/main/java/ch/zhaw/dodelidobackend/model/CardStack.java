@@ -1,27 +1,22 @@
 package ch.zhaw.dodelidobackend.model;
 /**
- * Service class of the Dodeldio cardstack. This class has a ArrayList<Card> instance variable for all
- * possible cards (25 in total, 5 different animals in 5 colours) called cardDeck.
+ * This class holds an ArrayList<Card> instance variable for all
+ * possible cards (25 in total, 5 different animals in 5 colours) of the game called cardDeck.
+ * This class provides methods to randomly return one of the 25 cards.
  *  @author Nadine Duss
- *  @version 2021.06.05
+ *  @version 2021.07.03
  */
-
-import ch.zhaw.dodelidobackend.model.Card;
 
 import java.util.ArrayList;
 import java.util.List;
 
-//@Service
-//@Singleton
-public class CardStackService {
-
-
-    private List<Card> cardDeck = new ArrayList<>(); //
+public class CardStack {
+    private final List<Card> cardDeck = new ArrayList<>(); //
 
     /**
-     * all 25 possible cards are added to the cardDeck in the parameterless constructor
+     * All 25 possible cards are added to the cardDeck in the parameterless constructor.
      */
-    public CardStackService() {
+    public CardStack() {
         for (int animalIndex = 0; animalIndex < 5; animalIndex++) {
             for (int colorindex = 0; colorindex < 5; colorindex++) {
 
@@ -31,11 +26,13 @@ public class CardStackService {
         }
     }
 
-
+    /**
+     * Getter method for the cardDeck instance variable of the CardStack class.
+     * @return the complete cardDeck as ArrayList<Card> with all 25 possible cards
+     */
     public List<Card> getCardDeck() {
         return cardDeck;
     }
-
 
     /**
      * one card is drawn randomly from the cardDeck.
@@ -45,5 +42,4 @@ public class CardStackService {
         int random = (int) (Math.random() * cardDeck.size());
         return cardDeck.get(random);
     }
-
 }
