@@ -16,6 +16,7 @@ import java.util.List;
  */
 
 @RestController
+@RequestMapping("/api")
 public class PlayerController {
 
     @Autowired
@@ -27,7 +28,7 @@ public class PlayerController {
      *
      * @return List of all Players
      */
-    @RequestMapping("/players")
+    @RequestMapping(method = RequestMethod.GET, value = "/players")
     public List<Player> getAllPlayers() {
         return playerService.getPlayerList();
     }
@@ -36,7 +37,7 @@ public class PlayerController {
      * get all player names which are in game
      * @return List of all player names String
      */
-    @RequestMapping("/playernames")
+    @RequestMapping(method = RequestMethod.GET, value ="/playernames")
     public List<String> getAllPlayerNames(){
         return playerService.getPlayerNames();
     }
@@ -45,7 +46,7 @@ public class PlayerController {
      * get all player names which are in game
      * @return List of all player names String
      */
-    @RequestMapping("/playernames/{playerName}")
+    @RequestMapping(method = RequestMethod.GET, value ="/playernames/{playerName}")
     public String getPlayerName(@PathVariable String playerName){
         return playerService.getPlayerName(playerName);
     }
@@ -56,7 +57,7 @@ public class PlayerController {
      * @param playerName to find specific player with name String
      * @return Player Instance
      */
-    @RequestMapping("/players/{playerName}")
+    @RequestMapping(method = RequestMethod.GET, value ="/players/{playerName}")
     public Player getPlayer(@PathVariable String playerName) {
         return playerService.getPlayer(playerName);
 
@@ -77,7 +78,7 @@ public class PlayerController {
      *
      * @return player whose turn it is
      */
-    @RequestMapping("/whosturn")
+    @RequestMapping(method = RequestMethod.GET, value ="/whosturn")
     public Player whosTurn() {
         return playerService.whosTurn();
     }
@@ -85,7 +86,7 @@ public class PlayerController {
     /**
      * Method to start and set initial turn to first player (player with ID 1)
      */
-    @RequestMapping("/start")
+    @RequestMapping(method = RequestMethod.GET, value ="/start")
     public void initialTurn() {
         playerService.initialTurn();
     }
@@ -93,7 +94,7 @@ public class PlayerController {
     /**
      * Method which passes turn to next player
      */
-    @RequestMapping("/next")
+    @RequestMapping(method = RequestMethod.GET, value ="/next")
     public void nextTurn() {
         playerService.nextTurn();
     }
@@ -103,7 +104,7 @@ public class PlayerController {
      * @author Lukas Boril
      * @version 2021.06.19
      */
-    @RequestMapping("/fail")
+    @RequestMapping(method = RequestMethod.GET, value ="/fail")
     public void punishCurrentPlayer() {
         playerService.punishCurrentPlayer();
     }
@@ -113,7 +114,7 @@ public class PlayerController {
      * @author Kaltrim Bajrami
      * @version 2021.06.30
      */
-    @RequestMapping("/clear")
+    @RequestMapping(method = RequestMethod.GET, value ="/clear")
     public void clear(){
         playerService.clearPlayers();
         roundCounterService.setRoundCounterToOne();
