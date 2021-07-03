@@ -23,11 +23,11 @@ public class RoundCounterController {
 
     /**
      * This method can be reached by POST requests to "/roundCounter"
-     * This method sets the current value of the roundCounter back to zero
+     * This method sets the current value of the roundCounter back to 1
      * This method shall be called after a player has given a wrong answer
      */
     @RequestMapping( method = RequestMethod.POST, value = "/roundCounter")
-    public void setRoundCounterToZero() {
+    public void setRoundCounterToOne() {
         roundCounterService.setRoundCounterToOne();
     }
 
