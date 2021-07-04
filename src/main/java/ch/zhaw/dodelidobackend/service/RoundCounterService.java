@@ -43,4 +43,5 @@ public class RoundCounterService {
         current++;
         roundCounter.setRoundsSinceLastFail(current);
     }
+
 }

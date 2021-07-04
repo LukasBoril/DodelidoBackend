@@ -17,6 +17,7 @@ public class PlayerService {
 
 
     private List<Player> playerList = new ArrayList<>();
+    private RoundCounterService roundCounterService;
 
     /**
      * get all players which are in game
@@ -95,8 +96,7 @@ public class PlayerService {
         Player lastPlayer = whosTurn();
         Player nextPlayer;
         if (playerId++ < playerList.size()) {
-            //nextPlayer = getPlayer(playerId++);
-            nextPlayer = getPlayer(++playerId);
+            nextPlayer = getPlayer(playerId++);
             nextPlayer.setYourTurn(true);
             lastPlayer.setYourTurn(false);
         } else {
@@ -134,5 +134,12 @@ public class PlayerService {
 
     public void clearPlayers() {
         playerList.clear();
+    }
+
+    /**
+     *
+     */
+    public void resetId(){
+        Player.resetIdCounter();
     }
 }

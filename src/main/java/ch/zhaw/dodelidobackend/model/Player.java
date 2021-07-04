@@ -109,5 +109,12 @@ public class Player {
         this.yourTurn = yourTurn;
     }
 
+    /**
+     *
+     */
+    public static void resetIdCounter(){
+        idCounter = 0;
+    }
+
 
 }
