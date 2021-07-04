@@ -22,7 +22,7 @@ If two traits are present to the equal highest number, then "Dodelido" has to be
 seconds to press the wrong button (0 to -5 on the timer). When the wrong button is pressed
 the player who made the mistake will lose valuable health points. The longer no mistake was made the more points he will lose!
 One additional twist: as tortoises are slow animals, you have to add a "ehm" before the answer for each visible tortoise (e.g. ehm blue).
-The solution for the depicted case is "Penguin!".
+The solution for the depicted case is "Dodelido!".
 
 ![](readme/dodelido.PNG)
 
