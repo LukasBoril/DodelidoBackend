@@ -17,7 +17,7 @@ The source code for the frontend in [Kotlin](https://github.zhaw.ch/dussnad1/gro
 
 ## Usage
 
-The  25 card types depict 5 different animals in 5 colours. The rules are simple: 3 cards are shown to the player on the move and he has to immediately shout out the most occurring trait (colour or animal)
+The game consists of  25 card types depicting 5 different animals in 5 colours. The rules are simple: 3 cards are shown to the player on the move and he has to immediately shout out the most occurring trait (colour or animal)
 If two traits are present to the equal highest number, then "Dodelido" has to be called out. If the player gives a wrong or too late answer (i.e. after the countdown reaches 0), the other players have 5
 seconds to press the wrong button (0 to -5 on the timer). When the wrong button is pressed
 the player who made the mistake will lose valuable health points. The longer no mistake was made the more points he will lose!
