@@ -24,7 +24,7 @@ the player who made the mistake will lose valuable health points. The longer no 
 One additional twist: as tortoises are slow animals, you have to add a "ehm" before the answer for each visible tortoise (e.g. ehm blue).
 The solution for the depicted case is "Penguin!".
 
-![](readme/dodelido.png)
+![](readme/dodelido.PNG)
 
 
 ``` java
