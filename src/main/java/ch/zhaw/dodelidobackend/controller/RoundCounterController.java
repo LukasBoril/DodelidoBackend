@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 2021.05.30
  */
 @RestController
-@RequestMapping("/api")
+//@RequestMapping("/api")
 public class RoundCounterController {
 
     @Autowired

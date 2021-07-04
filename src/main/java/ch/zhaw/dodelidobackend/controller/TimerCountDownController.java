@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 2021.05.29
  */
 @RestController
-@RequestMapping("/api")
+//@RequestMapping("/api")
 public class TimerCountDownController {
 
     @Autowired

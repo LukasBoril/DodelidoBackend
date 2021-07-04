@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/api")
+//@RequestMapping("/api")
 public class PlayerController {
 
     @Autowired
