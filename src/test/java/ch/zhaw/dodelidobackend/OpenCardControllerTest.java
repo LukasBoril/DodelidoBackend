@@ -39,7 +39,7 @@ public class OpenCardControllerTest  extends AbstractTest {
     @Test
         public void getCardList() throws Exception {
         String uri = "/openCards/";
-        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
+        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.put(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
@@ -67,7 +67,7 @@ public class OpenCardControllerTest  extends AbstractTest {
     @Test
     public void replaceCard() throws Exception {
         String uri = "/openCards/";
-        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
+        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.put(uri)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();

@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- *  A rest interface class, that delivers a Array of three Cards,
- *  with each new request one Card is replaced randomly by a new one.
+ *  A rest interface class, that delivers a Array of three Card objects,
+ *  with each new request one Card object is replaced randomly by a new one.
+ *  The openCards Array of three Card objects (fixed size) represent the openly visible cards
+ *  that will be displayed in the frontend to the user.
  *  @author Nadine Duss
  *  @version 2021.06.05
  */
@@ -20,26 +22,21 @@ public class OpenCardController {
     @Autowired
     private OpenCardService openCardService;
 
-
     /**
-     * from the 3 open cards, one should be replaced in every play move
-     * @return the openly visible cards with one card replaced
+     * @return the openly visible cards as Card[] with 3 Card objects
      */
     @RequestMapping(method = RequestMethod.GET, value="/openCards")
-    public Card[] addOpenCards() {
-        openCardService.replaceOneOpenCard2();
-        return openCardService.getOpenCards2();
+    public Card[] getOpenCards() {
+        return openCardService.getOpenCards();
     }
-
-
 
     /**
-     *deleteeee
+     * from the 3 Card objects int he array openCard, one should be replaced in every play move.
+     * @return the openly visible cards as Card[] with one card replaced
      */
     @RequestMapping(method = RequestMethod.PUT, value="/openCards")
-    public Card[] replaceOpenCard2() {
-
-        return openCardService.getOpenCards2();
+    public Card[] updateOpenCards() {
+        openCardService.replaceOneOpenCard();
+        return openCardService.getOpenCards();
     }
-
 }
