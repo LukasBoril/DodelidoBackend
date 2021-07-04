@@ -121,4 +121,14 @@ public class PlayerController {
         playerService.resetId();
     }
 
+    /**
+     * Method used for live-demo to manipulate player's healt points
+     * @author entire Team
+     * @version 2021.07.04
+     */
+    @RequestMapping(method = RequestMethod.POST, value = "/{playerID}/{newHP}")
+    public void setHealthPointsOfPlayer(@PathVariable int playerID, @PathVariable int newHP){
+        playerService.setPlayerHealthPoint(playerID,newHP);
+    }
+
 }

@@ -51,6 +51,15 @@ public class PlayerService {
     }
 
     /**
+     * Method used for live-demo to manipulate player's healt points
+     * @author entire Team
+     * @version 2021.07.04
+     */
+    public void setPlayerHealthPoint(int playerID, int newHealth) {
+        getPlayer(playerID).setHealthPoints(newHealth);
+    }
+
+    /**
      * get a specific player
      *
      * @param playerName to find specific player with name String
@@ -132,12 +141,17 @@ public class PlayerService {
         RoundCounterService.setRoundCounterToOne();
     }
 
+    /**
+     *  method to clear player list
+     */
     public void clearPlayers() {
         playerList.clear();
     }
 
     /**
-     *
+     * method to reset ID
+     * Method shall be called once a game is finished
+     * Resets the IdCounter for a new game
      */
     public void resetId(){
         Player.resetIdCounter();

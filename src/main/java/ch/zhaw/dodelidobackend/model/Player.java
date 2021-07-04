@@ -110,7 +110,7 @@ public class Player {
     }
 
     /**
-     *
+     * Method to reset IdCounter to 0
      */
     public static void resetIdCounter(){
         idCounter = 0;
